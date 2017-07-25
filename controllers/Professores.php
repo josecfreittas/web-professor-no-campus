@@ -7,7 +7,6 @@ class Professores {
     public function index () {
         $professores = Professor::all();
 
-        header('Content-Type: application/json');
         echo json_encode($professores);
     }
 }
