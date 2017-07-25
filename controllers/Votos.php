@@ -4,7 +4,8 @@ namespace App\Controllers;
 use App\Models\Voto;
 
 class Votos {
-    public function index ($tempo, $facebook, $id) {
+
+    public function professor ($tempo, $facebook, $id) {
 
         $tempo = \Carbon\Carbon::now()->subHours($tempo);
 
@@ -39,7 +40,8 @@ class Votos {
             "voto" => $voto
         ];
 
-        echo json_encode($resultado);
+        return $resultado;
+
     }
 
 }
