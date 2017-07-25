@@ -34,9 +34,16 @@ class Votos {
             $voto = null;
         }
 
+        if (($positivos + $negativos) > 0) {
+            $porcentagem = round(( $positivos * 100 ) / ($positivos + $negativos), 2);
+        } else {
+            $porcentagem = null;
+        }
+
         $resultado = [
             "positivos" => $positivos,
             "negativos" => $negativos,
+            "porcentagem" => $porcentagem,
             "voto" => $voto
         ];
 
