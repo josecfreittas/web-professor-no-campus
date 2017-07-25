@@ -1,0 +1,7 @@
+<?php
+
+defined("DBDRIVER")or define("DBDRIVER","mysql");
+defined("DBHOST")or define("DBHOST","localhost");
+defined("DBNAME")or define("DBNAME","data_base");
+defined("DBUSER")or define("DBUSER","user_name");
+defined("DBPASS")or define("DBPASS","");
