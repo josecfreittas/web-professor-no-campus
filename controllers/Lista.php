@@ -22,23 +22,23 @@ class Lista {
         $tempo = \Carbon\Carbon::now()->subHours($tempo);
 
         $positivos = Voto::where("professor_id", $id)
-            ->where('created_at', '>=', $tempo)
-            ->where("valor", true)
+            ->where('data', '>=', $tempo)
+            ->where("valor", "positivo")
             ->count();
         $negativos = Voto::where("professor_id", $id)
-            ->where('created_at', '>=', $tempo)
-            ->where("valor", false)
+            ->where('data', '>=', $tempo)
+            ->where("valor", "negativo")
             ->count();
         $ultima_hora = Voto::where("professor_id", $id)
-            ->where('created_at', '>=', \Carbon\Carbon::now()->subHours(1))
+            ->where('data', '>=', \Carbon\Carbon::now()->subHours(1))
             ->where("facebook_id", $facebook)
             ->get();
 
         if (!$ultima_hora->isEmpty()) {
             if ($ultima_hora[0]->valor) {
-                $voto = true;
+                $voto = "positivo";
             } else {
-                $voto = false;
+                $voto = "negativo";
             }
         } else {
             $voto = null;
