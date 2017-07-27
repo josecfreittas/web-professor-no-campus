@@ -12,11 +12,13 @@ class Votar {
             ->where("facebook_id", $facebook)
             ->delete();
 
+        if ($voto != "null") {
             Voto::insert([
                 "valor" => $voto,
                 "facebook_id" => $facebook,
                 "professor_id" => $id
                 ]);
+        }
 
     }
 

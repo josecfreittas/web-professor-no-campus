@@ -35,11 +35,7 @@ class Lista {
             ->get();
 
         if (!$ultima_hora->isEmpty()) {
-            if ($ultima_hora[0]->valor) {
-                $voto = "positivo";
-            } else {
-                $voto = "negativo";
-            }
+            $voto = $ultima_hora[0]->valor;
         } else {
             $voto = null;
         }
