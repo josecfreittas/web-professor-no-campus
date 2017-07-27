@@ -9,6 +9,8 @@ class Votos {
 
         try {
 
+            $voto = strtolower((string)$voto);
+
             $this->remover($facebook, $professor, false);
 
             // checa se é um voto válido
